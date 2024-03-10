@@ -3,7 +3,7 @@ package main.br.com.database.code.model;
 public class Cliente {
 
 	private String codCliente;
-	private String  nome;
+	private String nome;
 	private String login;
 	private String senha;
 	
