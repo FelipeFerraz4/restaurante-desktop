@@ -1,0 +1,36 @@
+//Pessoa(codPessoa, nome, dataNascimento)
+Contato(codContato, telefone, email, codPessoa, dataHora) codPessoa referência a entidade Pessoa
+Endereco(codEndereco, cep, estado, cidade, bairro, rua, numero, complemento)
+PessoaEndereco(codPessoaEndereco, codPessoa, codEndereco, dataHora)
+    codPessoa referência a entidade Pessoa
+    codEndereco referência a entidade Endereco
+Transacao(codTransacao, remetente, destinatario, nome, valor, dataHora, meio, descricao)
+    remetente referência a entidade Pessoa
+    destinatario referência a entidade Pessoa
+Fornecedor(codPessoa, nome, dataNascimento, categoriaProduto, cnpj)
+Funcionario(codPessoa, nome, dataNascimento, carteiraTrabalho, login, senha, cpf, codCargo)
+    codCargo refencia a entidade Cargo
+Cliente(codPessoa, nome, dataNascimento, login, senha, cpf)
+ItemEstoque(codItemEstoque, nome, categoria, preco, descricao, quantidade)
+Entrega(codEntrega, codPessoa, codItemEstoque, dataHoraSaida, dataHoraEntrega, meioEntrega)
+    codPessoa referência a entidade Fornecedor
+    codItemEstoque referência a entidade ItemEstoque
+    destinatario referência a entidade Pessoa
+Cargo(codCargo, nome, descricao, salario, permisao)
+Pedido(codPedido, status, funcionario, cliente, dataHora)
+    funcionario referência a entidade Funcionario
+    cliente referência a entidade cliente
+Mesa(codMesa, capacidade, adiantamento, status)
+Reserva(codReserva, codMesa, codPessoa, dataHora)
+    codPessoa referência a entidade Cliente
+    codMesa referência a entidade Mesa
+ItemCardapio(codItemCardapio, nome, valor, categoria, status)
+Preferencia(codPreferencia, cliente, codItemCardapio, dataHora)
+    codItemCardapio referência a entidade ItemCardapio
+    cliente refencia a entidade Cliente
+Preparar(codPreparar, codItemCardapio, codItemEstoque, dataHora)
+    codItemCardapio referência a entidade ItemCardapio
+    codItemEstoque referência a entidade ItemEstoque
+Contem(codContem, codPedido, codItemCardapio)
+    codPedido referência a entidade Pedido
+    codItemCardapio referência a entidade ItemCardapio
